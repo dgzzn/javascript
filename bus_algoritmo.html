@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<style>
+	th, td, tr{
+		border-bottom: 1px solid #ddd;
+	}
+	table{
+		border-collapse: collapse;
+		width: 30%;
+		text-align: center;
+		border: 2px solid black;
+	}
+</style>
+
+
+<body>	
+	<table id ="bus">
+		<tr>
+			<th>Nº usuários</th>
+			<th>Nº motoristas</th>
+			<th>Tipo de ônibus</th>
+		</tr>
+		<tr>
+			<td>< 15</td>
+			<td>~1</td>
+			<td>Minibus</td>
+		</tr>
+		<tr>
+			<td>~1</td>
+			<td>< 2</td>
+			<td>Minibus</td>
+		</tr>
+		<tr>
+			<td>> 15</td>
+			<td>~1</td>
+			<td>Bus</td>
+		</tr>	
+		<tr>
+			<td> - </td>
+			<td>0</td>
+			<td>Nenhum</td>
+		</tr>
+	</table>
+	<br><br><br>
+	<form name="dados" onsubmit="return saidaOnibus()" method="post">
+			Número de usuários: <input type="text" name ="nUser">
+			Número de motoristas: <input type="text" name="nMotorista">
+			<input type="submit" value="Enviar">
+		</form>
+	
+	
+	<script>
+		
+		
+		function saidaOnibus(nUser, nMotorista){
+			var busType;
+			var x = document.forms["dados"]["nUser"]["nMotorista"].value;
+			if((nUser < 15) || (nMotorista < 2))
+				busType = "Minibus";
+				document.write(busType);
+			else if(nMotorista == 0)
+				busType = "Nenhum";
+				document.write(busType);
+			else
+				busType = "Bus";
+				document.write(busType);
+		}
+		
+		
+	</script>
+
+</body>
+</html>
